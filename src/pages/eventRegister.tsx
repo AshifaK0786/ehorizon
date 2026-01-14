@@ -30,6 +30,8 @@ export function EventRegisterForm({ event }: { event?: any }) {
   const [screenshots, setScreenshots] = useState<File[]>([]);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [showGuidelines, setShowGuidelines] = useState(false);
+  const guidelineUrl = event?.guidelinesFile ? `/assets/guidelines/${event.guidelinesFile}` : null;
 
   const departments = [
     "CSE",
@@ -124,6 +126,57 @@ export function EventRegisterForm({ event }: { event?: any }) {
         </button>
 
         <h1 className="text-3xl font-black mb-4">{event ? event.title : "Event Registration"}</h1>
+
+        {/* Event description (3 lines) and Guidelines button */}
+        {event?.descriptionLines && (
+          <div className="mb-4 flex items-start justify-between gap-4">
+            <div className="text-white/80 space-y-1">
+              {event.descriptionLines.slice(0, 3).map((ln: string, i: number) => (
+                <p key={i} className="leading-6">{ln}</p>
+              ))}
+            </div>
+            {event?.guidelinesFile ? (
+              <div className="flex-shrink-0">
+                <button type="button" onClick={() => setShowGuidelines(true)} className="px-4 py-2 bg-yellow-400 text-black rounded-full font-bold">Guidelines</button>
+              </div>
+            ) : null}
+          </div>
+        )}
+
+        {/* Contacts: left and right with hover effect (event-specific). Smaller buttons, larger font, show coordinator name then number */}
+        <div className="mb-6">
+          <div className="flex items-center justify-between gap-4">
+            <a
+              href={event?.contactLeft ? `tel:${event.contactLeft}` : "tel:+919999999999"}
+              className="flex-1 max-w-[47%] inline-flex flex-col items-center justify-center gap-1 rounded-full px-5 py-2 bg-white/10 backdrop-blur-md text-white/85 hover:bg-yellow-400 hover:text-black transition"
+            >
+              <div className="text-sm font-medium text-white">{event?.contactLeftName ?? "Coordinator"}</div>
+              <div className="text-sm font-medium text-white">{event?.contactLeft ?? "+91 99999 99999"}</div>
+            </a>
+
+            <a
+              href={event?.contactRight ? `tel:${event.contactRight}` : "tel:+919999999998"}
+              className="flex-1 max-w-[47%] inline-flex flex-col items-center justify-center gap-1 rounded-full px-5 py-2 bg-white/10 backdrop-blur-md text-white/85 hover:bg-yellow-400 hover:text-black transition"
+            >
+              <div className="text-sm font-medium text-white">{event?.contactRightName ?? "Coordinator"}</div>
+              <div className="text-sm font-medium text-white">{event?.contactRight ?? "+91 99999 99998"}</div>
+            </a>
+          </div>
+        </div>
+
+        {/* WhatsApp group button (event-specific) */}
+        {event?.whatsappLink ? (
+          <div className="mb-6 flex justify-center">
+            <a
+              href={event.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold shadow-sm transition-transform hover:scale-105"
+            >
+              Join WhatsApp Group
+            </a>
+          </div>
+        ) : null}
 
         <div className="mt-4 rounded-3xl border border-yellow-600/25 bg-white/5 backdrop-blur-xl p-6 md:p-8">
           <form onSubmit={onSubmit} className="grid gap-6">
@@ -299,6 +352,20 @@ export function EventRegisterForm({ event }: { event?: any }) {
             </div>
           </form>
         </div>
+        {showGuidelines && guidelineUrl ? (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+            <div className="w-full max-w-4xl h-[80vh] bg-black/90 rounded-lg overflow-hidden">
+              <div className="flex items-center justify-between p-3 bg-black/80">
+                <div className="text-white font-bold">Guidelines - {event?.title}</div>
+                <div className="flex items-center gap-2">
+                  <a href={guidelineUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/90 underline mr-2">Open in new tab</a>
+                  <button onClick={() => setShowGuidelines(false)} className="text-white/80 bg-white/10 px-3 py-1 rounded">Close</button>
+                </div>
+              </div>
+              <iframe src={guidelineUrl} className="w-full h-full" title="Guidelines PDF"></iframe>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

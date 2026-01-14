@@ -4,8 +4,30 @@ import webifyImg from "../assets/webify.png";
 import electricalImg from "../assets/electrical odyssey.png";
 import iplImg from "../assets/ipl auction.png";
 import talentiaImg from "../assets/talentia.png";
+import mecharenaImg from "../assets/mech arena.png";
+import gameathonImg from "../assets/gameathon.png";
+import buildscapeImg from "../assets/buildscape.png";
 
 export const events = [
+  {
+    slug: "webify",
+    title: "Webify",
+    image: webifyImg,
+    registerUrl: "/register/webify",
+    qrImage: "/assets/qr/common-qr.png",
+    maxTeamMembers: 3,
+    descriptionLines: [
+      "Build modern, responsive web apps in a team.",
+      "Focus on UI/UX, accessibility and performance.",
+      "Bring your laptop; frameworks allowed.",
+    ],
+    contactLeft: "+918888000001",
+    contactRight: "+918888000002",
+    contactLeftName: "DHARSHAN P ",
+    contactRightName: "Webify Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/KhzXrUV8RON0w7Zrd6oEso",
+  },
+  
   {
     slug: "thirai-trivia",
     title: "Thirai Trivia",
@@ -13,6 +35,16 @@ export const events = [
     registerUrl: "/register/thirai-trivia",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "Test your film knowledge across multiple rounds.",
+      "Fast-paced questions with bonus rounds.",
+      "Open to solo participants and small teams.",
+    ],
+    contactLeft: "+918072323353",
+    contactRight: "+918888000012",
+    contactLeftName: "ARAVINDAN T ",
+    contactRightName: "Thirai Trivia Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/CrAE0u8IZ3FEiDcvLUBbAg",
   },
   {
     slug: "masterchef-mania",
@@ -21,38 +53,55 @@ export const events = [
     registerUrl: "/register/masterchef-mania",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 5,
+    descriptionLines: [
+      "Showcase culinary creativity under time constraints.",
+      "Judging based on taste, presentation and originality.",
+      "Bring your own basic utensils and ingredients.",
+    ],
+    contactLeft: "+918888000021",
+    contactRight: "+918888000022",
+    contactLeftName: "MasterChef Coordinator",
+    contactRightName: "MasterChef Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/CF8R5WbWOLZHzymE8F9Pdj",
   },
-  {
-    slug: "web-development",
-    title: "Web Development",
-    image: webifyImg,
-    registerUrl: "/register/web-development",
-    qrImage: "/assets/qr/common-qr.png",
-    maxTeamMembers: 3,
-  },
+  
   {
     slug: "mecharena",
     title: "Mecharena",
-    image: "/assets/events/mecharena.jpg",
+    image: mecharenaImg,
     registerUrl: "/register/mecharena",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "Competitive robotics challenges and puzzles.",
+      "Design, build and demonstrate your prototype.",
+      "Practical tasks will test mobility and control.",
+    ],
+    guidelinesFile: "MECHARENA.pdf",
+    contactLeft: "+918888000031",
+    contactRight: "+918888000032",
+    contactLeftName: "Mecharena Coordinator",
+    contactRightName: "Mecharena Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/DJ4WiRjfv9bIirxC4Ek7gU",
   },
-  {
-    slug: "webify",
-    title: "Webify",
-    image: webifyImg,
-    registerUrl: "/register/webify",
-    qrImage: "/assets/qr/common-qr.png",
-    maxTeamMembers: 3,
-  },
+  
   {
     slug: "gameathon",
     title: "Gameathon",
-    image: "/assets/events/gameathon.jpg",
+    image: gameathonImg,
     registerUrl: "/register/gameathon",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "Rapid game development sprint with theme constraints.",
+      "Prototype gameplay mechanics and polish a short demo.",
+      "Teams present their playable builds to judges.",
+    ],
+    contactLeft: "+918888000041",
+    contactRight: "+918888000042",
+    contactLeftName: "Gameathon Coordinator",
+    contactRightName: "Gameathon Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/Lut6MBJKZnjBJBigKonb4R",
   },
   {
     slug: "electrical-odyssey",
@@ -61,14 +110,36 @@ export const events = [
     registerUrl: "/register/electrical-odyssey",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "Hands-on electrical circuit and troubleshooting tasks.",
+      "Apply theory to practical problem-solving challenges.",
+      "Work with provided components during the event.",
+    ],
+    guidelinesFile: "Electrical_Odyssey.pdf",
+    contactLeft: "+918888000051",
+    contactRight: "+918888000052",
+    contactLeftName: "Electrical Coordinator",
+    contactRightName: "Electrical Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/I5QaoN8wGzWEGuC4MEwvEa",
   },
   {
     slug: "buildscape",
     title: "Buildscape",
-    image: "/assets/events/buildscape.jpg",
+    image: buildscapeImg,
     registerUrl: "/register/buildscape",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "Design and build creative mechanical structures.",
+      "Challenges emphasize innovation and robustness.",
+      "Bring tools and small materials if needed.",
+    ],
+    guidelinesFile: "Buildscape.pdf",
+    contactLeft: "+918888000061",
+    contactRight: "+918888000062",
+    contactLeftName: "Buildscape Coordinator",
+    contactRightName: "Buildscape Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/FhpI5f6nZoeEXCUjTah7yu",
   },
   {
     slug: "ipl-auction",
@@ -77,6 +148,17 @@ export const events = [
     registerUrl: "/register/ipl-auction",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 5,
+    descriptionLines: [
+      "Strategic bidding and team management simulation.",
+      "Compete to build the most valuable virtual squad.",
+      "Prizes for best strategy and final score.",
+    ],
+    guidelinesFile: "IPL AUCTION.pdf",
+    contactLeft: "+918888000071",
+    contactRight: "+918888000072",
+    contactLeftName: "IPL Auction Coordinator",
+    contactRightName: "IPL Auction Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/LbMhCLQeWaR7x7HNQ3376I",
   },
   {
     slug: "talentia",
@@ -85,6 +167,17 @@ export const events = [
     registerUrl: "/register/talentia",
     qrImage: "/assets/qr/common-qr.png",
     maxTeamMembers: 3,
+    descriptionLines: [
+      "A stage to showcase diverse talents and performances.",
+      "Music, dance, and creative acts welcome.",
+      "Prepare a short set and any required props.",
+    ],
+    guidelinesFile: "TALENTIA.pdf",
+    contactLeft: "+918888000081",
+    contactRight: "+918888000082",
+    contactLeftName: "Talentia Coordinator",
+    contactRightName: "Talentia Coordinator 2",
+    whatsappLink: "https://chat.whatsapp.com/IN1c5ogbPFw2SFAoCzB6Nm",
   },
 ];
 
